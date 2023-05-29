@@ -6,13 +6,6 @@ import { Component } from "@angular/core";
 })
 export class ProductListComponent {
     pageTitle: string = 'Product List';
-    filter: string = "Filter by:"
-    filtered: string = "Filtered by:";
-    product: string = "Product";
-    code: string = "Code";
-    available: string = "Available";
-    price: string = "Price";
-    rating: string = "5 Star Rating";
     imageWidth: number = 50;
     imageMargin : number = 2;
     showImage: boolean = false;
