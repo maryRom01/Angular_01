@@ -4,7 +4,7 @@ import { ProductService } from "./product.service";
 import { Subscription } from "rxjs";
 
 @Component({
-    selector: 'pm-products',
+    
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
@@ -14,12 +14,12 @@ export class ProductListComponent implements OnInit, OnDestroy {
     imageMargin : number = 2;
     showImage: boolean = false;
     errorMessage: string = '';
-    sub!: Subscription; 
+    sub!: Subscription;
 
     private _listFilter: string = '';
 
     constructor(private productService: ProductService) {
-   
+
     }
 
     get listFilter(): string {
@@ -29,7 +29,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
         this._listFilter = value;
         this.filteredProducts = this.performFilter(value);
     }
-    
+
     filteredProducts: IProduct[] = [];
 
     products: IProduct[] = [];
@@ -59,7 +59,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
     performFilter(filterBy: string): IProduct[] {
         filterBy = filterBy.toLocaleLowerCase();
-        return this.products.filter((product: IProduct) => 
+        return this.products.filter((product: IProduct) =>
             product.productName.toLocaleLowerCase().includes(filterBy));
     }
 }
